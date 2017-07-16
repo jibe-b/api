@@ -283,9 +283,9 @@ CLapi.addRoute('service/oab/request/:rid', {
         if (this.request.body.journal !== undefined) n.journal = this.request.body.journal;
         if (this.request.body.doi !== undefined) n.doi = this.request.body.doi;
         if (n.status === undefined) {
-          if ( (!r.title && !n.title) || (!r.email && !n.email) || (!r.story && !n.story) ) {
+          if ( (!r.title && !n.title) || (!r.email && !n.email) || (!r.story && !n.story) || (!r.journal && !n.journal) ) {
             n.status = 'help';
-          } else if (r.status === 'help' && ( (r.title || n.title) && (r.email || n.email) && (r.story || n.story) ) ) {
+          } else if (r.status === 'help' && ( (r.title || n.title) && (r.email || n.email) && (r.story || n.story) || (!r.journal && !n.journal) ) ) {
             n.status = 'moderate';
           }
         }
