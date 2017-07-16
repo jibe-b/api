@@ -280,6 +280,7 @@ CLapi.addRoute('service/oab/request/:rid', {
         if (r.user && this.userId === r.user.id && this.request.body.story !== undefined) n.story = this.request.body.story;
         if (this.request.body.url !== undefined) n.url = this.request.body.url;
         if (this.request.body.title !== undefined) n.title = this.request.body.title;
+        if (this.request.body.journal !== undefined) n.journal = this.request.body.journal;
         if (this.request.body.doi !== undefined) n.doi = this.request.body.doi;
         if (n.status === undefined) {
           if ( (!r.title && !n.title) || (!r.email && !n.email) || (!r.story && !n.story) ) {
